@@ -1,0 +1,19 @@
+<div class="parent">
+  <h2>Parent Component</h2>
+
+  <app-foods [food]="currentFood" (newFoodEvent)="addFood($event)"></app-foods>
+  <!--[food]="currentFood" = PROPERTY BINDING
+    na child tag u parent templejtu se dodaje veza izmedju parenta i childa
+    kazemo da se [food] iz child dobiti vrednost currentFood iz parenta
+
+    (newFoodEvent)="addFood($event) = EVENT BINDING
+    na child tagu u parent templejtu se dodaje veza izmedju parenta i childa
+    kazemo da ce biti neki event opisan u childu 
+    i da parent treba da pokupi info iz eventa i uradi nesto sa tim info
+    ovde : treba da pokupi newFood.value iz inputa i ubaci u foods niz preko addFood metode
+  -->
+
+  <ul>
+    <li *ngFor="let f of foods">{{ f }}</li>
+  </ul>
+</div>

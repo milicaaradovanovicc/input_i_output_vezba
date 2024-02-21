@@ -1,0 +1,16 @@
+<div class="child">
+  <h2>Child Component</h2>
+  <p>
+    Todays food is: <strong>{{ food }}</strong
+    ><!--u child.html se prikazuje food-->
+  </p>
+
+  <label for="foodInput">Add a food:</label>
+  <input type="text" id="foodInput" #newFood />
+
+  <button (click)="addNewFood(newFood.value)">Add</button>
+  <!--metoda je iz child.ts 
+    kad se klikne na dugme hvata se value iz #newFood, 
+    a kod u child.ts emituje taj value preko addNewFood funkcije 
+    koja ima u sebi this.newFoodEvent.emit(value)-->
+</div>
